@@ -136,7 +136,7 @@ extension PhoneToWatchDataController {
     /// file - Receiver
     /// Image Editing App
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
-        
+        // move your file to permenant store. File will be deleted in store when this delegate method is called
     }
 
     /// file - Monitor, Cancel Task
