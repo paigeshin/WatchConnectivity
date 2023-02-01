@@ -2,12 +2,6 @@
 
 ```swift
 
-//
-//  PhoneToWatchDataController.swift
-//  WeightReminder
-//
-//  Created by paige shin on 2023/02/02.
-//
 
 import Foundation
 import WatchConnectivity
@@ -26,7 +20,7 @@ class PhoneToWatchDataController: NSObject, WCSessionDelegate {
     }
     
     // is interactive messaging possible?
-    var messagingEnabled: Bool {
+    var isRechable: Bool {
         return self.session?.isReachable ?? false
     }
     
