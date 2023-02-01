@@ -1,6 +1,14 @@
 # WatchConnectivity
 
 ```swift
+
+//
+//  PhoneToWatchDataController.swift
+//  WeightReminder
+//
+//  Created by paige shin on 2023/02/02.
+//
+
 import Foundation
 import WatchConnectivity
 
@@ -18,7 +26,7 @@ class PhoneToWatchDataController: NSObject, WCSessionDelegate {
     }
     
     // is interactive messaging possible?
-    var messageEnabled: Bool {
+    var messagingEnabled: Bool {
         return self.session?.isReachable ?? false
     }
     
@@ -35,19 +43,7 @@ class PhoneToWatchDataController: NSObject, WCSessionDelegate {
         }
     }
     
-    /// Interactive Messaging
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-//        if let defaults = UserDefaults(suiteName: "group.com.hypelist") {
-//            if let data = defaults.data(forKey: "hypedEvents") {
-//                let decoder = JSONDecoder()
-//                if let jsonHypedEvents = try? decoder.decode([HypedEvent].self, from: data) {
-//                    DispatchQueue.main.async {
-//                        replyHandler(self.convertHypedEventsToContext(hypedEvents: jsonHypedEvents))
-//                    }
-//                }
-//            }
-//        }
-    }
+ 
 }
 
 // MARK: - SESSION STATES
@@ -184,6 +180,12 @@ extension PhoneToWatchDataController {
     // `DATA`
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
         
+    }
+    
+    // Interactive Messaging - Receiver
+    // `DICTIONARY` WITH `REPLY HANDLER`
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+
     }
     
     // Interactive Messaging - Receiver
